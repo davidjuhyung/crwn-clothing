@@ -2,10 +2,15 @@ import React from 'react';
 import './menu-item.style.scss';
 // react gives each HTML markup (i.e. div) a "style" like normal HTML, but takes in javascript objects, thus 2 {}'s : { {blah: 2px} }
 
-const MenuItem = ({ title, imageUrl, size }) => {
+import { withRouter } from 'react-router-dom';
+
+const MenuItem = ({ title, imageUrl, size, history, match, linkUrl }) => {
 	const className = size ? `${size} menu-item` : 'menu-item';
 	return (
-		<div className={className}>
+		<div
+			className={className}
+			onClick={() => history.push(`${match.url}${linkUrl}`)}
+		>
 			<div
 				style={{
 					backgroundImage: `url(${imageUrl})`
@@ -20,4 +25,4 @@ const MenuItem = ({ title, imageUrl, size }) => {
 	);
 };
 
-export default MenuItem;
+export default withRouter(MenuItem);
