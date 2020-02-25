@@ -18,7 +18,7 @@ const StripeButton = ({ price }) => {
 			image="https://sendeyo.com/up/d/f3eb2117da"
 			description={`Your total is $${price}`}
 			amount={priceForStripe}
-			panelLabel="Pay noonw"
+			panelLabel="Pay w"
 			token={onToken}
 			key={publishableKey}
 		></StripeCheckout>
