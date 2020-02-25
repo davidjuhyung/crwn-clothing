@@ -20,7 +20,7 @@ const StripeButton = ({ price }) => {
 			amount={priceForStripe}
 			panelLabel="Pay w"
 			token={onToken}
-			key={publishableKey}
+			stripeKey={publishableKey}
 		></StripeCheckout>
 	);
 };
